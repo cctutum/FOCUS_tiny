@@ -1,6 +1,6 @@
 import jax.numpy as np
 from jax import jit, grad, vmap, pmap, device_count
-from jax.config import config
+# from jax.config import config
 import tables as tb
 import time
 from functools import partial
@@ -10,7 +10,7 @@ from functools import partial
 #######################################################################
 
 NS = 32
-N = 100
+N = 300
 lr = 0.0001
 theta = np.linspace(0, 2 * np.pi, NS + 1)
 nn = np.load("nn.npy")
