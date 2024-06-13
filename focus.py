@@ -1,7 +1,7 @@
 import jax.numpy as np
 import h5py
 from jax import jit, grad, vmap
-from jax.config import config
+# from jax.config import config
 import tables as tb
 from functools import partial
 import numpy as numpy
@@ -272,8 +272,8 @@ for n in range(N):
     objective_dict[
         "I_arr"] = objective_dict["I_arr"] - gradient["I_arr"] *  lr
     print(n)
-    print("taking a shape step of size: {}".format(np.linalg.norm(gradient["p"])*lr))
-    print("taking a current step of size: {}".format(np.linalg.norm(gradient["I_arr"])*lr))
+    print(f"taking a shape step of size: {np.linalg.norm(gradient['p'])*lr}")
+    print(f"taking a current step of size: {np.linalg.norm(gradient['I_arr'])*lr}")
     print("loss is {}".format(objective_function(objective_dict)))
     objective_dicts.append(objective_dict.copy())
 
